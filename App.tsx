@@ -4,20 +4,20 @@ import {
   Poppins_500Medium,
   Poppins_600SemiBold,
   Poppins_700Bold,
-} from "@expo-google-fonts/poppins";
+} from '@expo-google-fonts/poppins';
 import {
   Roboto_300Light,
   Roboto_400Regular,
   Roboto_500Medium,
   Roboto_700Bold,
-} from "@expo-google-fonts/roboto";
-import { light } from "@themes/light";
-import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-import { StatusBar } from "expo-status-bar";
-import { useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { ThemeProvider } from "styled-components/native";
+} from '@expo-google-fonts/roboto';
+import { light } from '@themes/light';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
+import { StatusBar } from 'expo-status-bar';
+import { useEffect } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { ThemeProvider } from 'styled-components/native';
 
 export default function App() {
   const { theme: lightTheme } = light;
@@ -56,8 +56,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
