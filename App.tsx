@@ -1,15 +1,23 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { ThemeProvider } from "styled-components/native";
-import { light } from "@themes/light";
+import {
+  Poppins_300Light,
+  Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_600SemiBold,
+  Poppins_700Bold,
+} from "@expo-google-fonts/poppins";
 import {
   Roboto_300Light,
   Roboto_400Regular,
   Roboto_500Medium,
   Roboto_700Bold,
-  Roboto_900Black,
 } from "@expo-google-fonts/roboto";
+import { light } from "@themes/light";
 import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import { StatusBar } from "expo-status-bar";
+import { useEffect } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { ThemeProvider } from "styled-components/native";
 
 export default function App() {
   const { theme: lightTheme } = light;
@@ -19,11 +27,21 @@ export default function App() {
     Roboto_400Regular,
     Roboto_500Medium,
     Roboto_700Bold,
-    Roboto_900Black,
+    Poppins_300Light,
+    Poppins_400Regular,
+    Poppins_500Medium,
+    Poppins_600SemiBold,
+    Poppins_700Bold,
   });
+
+  useEffect(() => {
+    SplashScreen.preventAutoHideAsync();
+  }, []);
+
   if (!fontsLoaded) {
-    return <Text>Loading...</Text>;
+    return null;
   } else {
+    SplashScreen.hideAsync();
     return (
       <ThemeProvider theme={lightTheme}>
         <View style={styles.container}>
