@@ -79,7 +79,7 @@ export function SplashScreen() {
       { duration: ANIMATION_DURATION },
       () => {
         'worklet';
-        runOnJS(startApp);
+        runOnJS(startApp)();
       }
     );
   }, [splashAnimationSharedValue, startApp]);
