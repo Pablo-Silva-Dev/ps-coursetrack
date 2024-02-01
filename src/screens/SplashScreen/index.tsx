@@ -11,10 +11,13 @@ import Animated, {
 } from 'react-native-reanimated';
 import { light as lightTheme } from 'themes/light';
 import { Container, GradientContainer, LogoTitle } from './styles';
+import { useNavigation } from '@react-navigation/native';
+import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 
 export function SplashScreen() {
   const { theme } = lightTheme;
   const splashAnimationSharedValue = useSharedValue(0);
+  const navigation = useNavigation<TAuthRoutesBottomTabs>();
 
   const ANIMATION_DURATION = 2400;
   const ANIMATION_INITIAL_VALUE = 0;
@@ -70,8 +73,8 @@ export function SplashScreen() {
   });
 
   const startApp = useCallback(() => {
-    console.log('App started');
-  }, []);
+    navigation.navigate('InitialScreen');
+  }, [navigation]);
 
   useEffect(() => {
     splashAnimationSharedValue.value = withTiming(
