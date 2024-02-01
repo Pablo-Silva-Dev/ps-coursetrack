@@ -1,20 +1,50 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SplashScreen } from 'screens/SplashScreen';
-import { Home } from 'screens/Home';
+import { InitialScreen } from '@screens/Home';
 
-export const AuthRoutes = () => {
-  const BottomTabNavigator = createBottomTabNavigator();
+type AuthRoutes = {
+  SplashScreen: undefined;
+  InitialScreen: undefined;
+};
+
+const AuthRoutes = () => {
+  const BottomTabNavigator = createBottomTabNavigator<AuthRoutes>();
+
+  const screensConfig = {
+    headerShown: false,
+    tabBarStyle: {
+      display: 'none',
+    },
+  };
+
+  const authRoutes = [
+    {
+      name: 'SplashScreen',
+      component: SplashScreen,
+      options: screensConfig,
+    },
+    {
+      name: 'InitialScreen',
+      component: InitialScreen,
+      options: screensConfig,
+    },
+  ];
 
   return (
     <NavigationContainer>
       <BottomTabNavigator.Navigator initialRouteName="SplashScreen">
-        <BottomTabNavigator.Screen
-          component={SplashScreen}
-          name="SplashScreen"
-        />
-        <BottomTabNavigator.Screen component={Home} name="Home" />
+        {authRoutes.map(route => (
+          <BottomTabNavigator.Screen
+            key={route.name}
+            name={route.name as never}
+            component={route.component}
+            options={route.options as never}
+          />
+        ))}
       </BottomTabNavigator.Navigator>
     </NavigationContainer>
   );
 };
+
+export default AuthRoutes;

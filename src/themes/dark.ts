@@ -2,6 +2,8 @@ export const dark = {
   theme: {
     title: 'dark',
     colors: {
+      absolute_black: '#000000',
+      absolute_white: '#FFFFFF',
       alert: '#FFC107',
       background: '#2E2E2E',
       borders: '#A7A6A6',

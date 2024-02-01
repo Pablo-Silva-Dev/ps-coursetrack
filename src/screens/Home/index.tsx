@@ -1,9 +1,9 @@
 import { Container, Text } from './styles';
 
-export function Home() {
+export function InitialScreen() {
   return (
     <Container>
-      <Text>Home</Text>
+      <Text>InitialScreen</Text>
     </Container>
   );
 }

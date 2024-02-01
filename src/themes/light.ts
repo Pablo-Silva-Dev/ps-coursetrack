@@ -2,6 +2,8 @@ export const light = {
   theme: {
     title: 'light',
     colors: {
+      absolute_black: '#000000',
+      absolute_white: '#FFFFFF',
       alert: '#FFC107',
       background: '#F9F9F9',
       borders: '#A7A6A6',
