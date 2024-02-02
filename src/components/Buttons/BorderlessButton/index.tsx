@@ -5,12 +5,10 @@ import { Container, Title } from './styles';
 interface ButtonProps extends TouchableOpacityProps {
   title: string;
   disabled?: boolean;
-  loading?: boolean;
-  bgColor?: string;
   buttonTextStyle?: CSSProperties;
 }
 
-export function PrimaryButton({
+export function BorderlessButton({
   disabled,
   buttonTextStyle,
   title,

@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components/native';
 
 interface ButtonProps extends DefaultTheme {
   disabled?: boolean;
-  bgColor?: string;
 }
 
 export const Container = styled.TouchableOpacity<ButtonProps>`
@@ -13,13 +12,12 @@ export const Container = styled.TouchableOpacity<ButtonProps>`
   justify-content: center;
   align-items: center;
   border-radius: ${RFValue(8)}px;
-  background-color: ${({ theme, bgColor }: ButtonProps) =>
-    bgColor ? bgColor : theme.colors.primary};
+  background-color: transparent;
 `;
 
 export const Title = styled.Text`
   ${({ theme }: DefaultTheme) => css`
-    color: ${theme.colors.absolute_white};
+    color: ${theme.colors.primaryVariant};
     font-size: ${RFValue(theme.sizes[4])}px;
     font-family: ${theme.fonts.secondary_600};
   `}
