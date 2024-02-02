@@ -1,5 +1,6 @@
 /* eslint-disable quotes */
-import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 import { useCallback, useEffect } from 'react';
 import Animated, {
   Extrapolation,
@@ -9,10 +10,10 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
+import { SvgXml } from 'react-native-svg';
 import { light as lightTheme } from 'themes/light';
+import { logoSvg } from '../../assets/svgs';
 import { Container, GradientContainer, LogoTitle } from './styles';
-import { useNavigation } from '@react-navigation/native';
-import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 
 export function SplashScreen() {
   const { theme } = lightTheme;
@@ -65,7 +66,7 @@ export function SplashScreen() {
           translateX: interpolate(
             splashAnimationSharedValue.value,
             [ANIMATION_TRANSLATION_REASON * 2, ANIMATION_INITIAL_VALUE],
-            [ANIMATION_TRANSLATION_REASON * 2, ANIMATION_TRANSLATION_REASON],
+            [ANIMATION_TRANSLATION_REASON * 2.5, ANIMATION_TRANSLATION_REASON],
             Extrapolation.CLAMP
           ),
         },
@@ -97,7 +98,7 @@ export function SplashScreen() {
         colors={[theme.colors.primary, theme.colors.absolute_black]}
       />
       <Animated.View style={[logoStyle, { position: 'absolute' }]}>
-        <FontAwesome name="hourglass-end" size={96} color="#FFFFFF" />
+        <SvgXml xml={logoSvg} />
       </Animated.View>
       <Animated.View style={[capitalTextStyle, { position: 'absolute' }]}>
         <LogoTitle>{`Plataforma de\nCurso Online`}</LogoTitle>
