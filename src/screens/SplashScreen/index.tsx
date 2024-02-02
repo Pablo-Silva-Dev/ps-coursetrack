@@ -23,6 +23,7 @@ export function SplashScreen() {
   const ANIMATION_INITIAL_VALUE = 0;
   const ANIMATION_TRANSLATION_REASON = 50;
   const ANIMATION_OPACITY_REASON = 1;
+  const START_APP_TIMER = 1200;
 
   const logoStyle = useAnimatedStyle(() => {
     return {
@@ -73,7 +74,10 @@ export function SplashScreen() {
   });
 
   const startApp = useCallback(() => {
-    navigation.navigate('InitialScreen');
+    const timer = setTimeout(() => {
+      navigation.navigate('InitialScreen');
+    }, START_APP_TIMER);
+    return () => clearTimeout(timer);
   }, [navigation]);
 
   useEffect(() => {
