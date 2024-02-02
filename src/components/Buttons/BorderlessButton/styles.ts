@@ -12,13 +12,14 @@ export const Container = styled.TouchableOpacity<ButtonProps>`
   justify-content: center;
   align-items: center;
   border-radius: ${RFValue(8)}px;
-  background-color: transparent;
+  background-color: ${({ theme, disabled }: ButtonProps) =>
+    disabled ? theme.colors.disabled : 'transparent'};
 `;
 
 export const Title = styled.Text`
   ${({ theme }: DefaultTheme) => css`
     color: ${theme.colors.primaryVariant};
-    font-size: ${RFValue(theme.sizes[4])}px;
-    font-family: ${theme.fonts.secondary_600};
+    font-size: ${RFValue(theme.fontSizes[6])}px;
+    font-family: ${theme.fonts.secondary_700};
   `}
 `;

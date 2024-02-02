@@ -8,7 +8,7 @@ export const light = {
       background: '#F9F9F9',
       borders: '#A7A6A6',
       cards: '#ECECEC',
-      disabled: '#777777',
+      disabled: '#F2F2F2',
       error: '#C4083A',
       info: '#086CC4',
       inputs: '#F2F2F2',
@@ -35,5 +35,6 @@ export const light = {
     },
     spacings: [2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 72, 80, 120],
     sizes: [2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 72, 80, 120],
+    fontSizes: [8, 9, 10, 11, 12, 13, 14, 16, 20, 24, 32],
   },
 };
