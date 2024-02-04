@@ -2,7 +2,7 @@ import { TouchableOpacityProps } from 'react-native';
 import { CSSProperties } from 'styled-components';
 import { Container, Title } from './styles';
 
-interface ButtonProps extends TouchableOpacityProps {
+interface BorderlessButtonProps extends TouchableOpacityProps {
   title: string;
   disabled?: boolean;
   buttonTextStyle?: CSSProperties;
@@ -13,7 +13,7 @@ export function BorderlessButton({
   buttonTextStyle,
   title,
   ...rest
-}: ButtonProps) {
+}: BorderlessButtonProps) {
   const DISABLED_BUTTON_OPACITY = 0.8;
   return (
     <Container

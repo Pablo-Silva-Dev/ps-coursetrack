@@ -13,6 +13,7 @@ import {
 } from '@expo-google-fonts/roboto';
 import { Routes } from '@routes/index';
 import { light } from '@themes/light';
+import { dark } from '@themes/dark';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
@@ -20,6 +21,7 @@ import { ThemeProvider } from 'styled-components/native';
 
 export default function App() {
   const { theme: lightTheme } = light;
+  const { theme: darkTheme } = dark;
 
   const [fontsLoaded] = useFonts({
     Roboto_300Light,
@@ -42,7 +44,7 @@ export default function App() {
   } else {
     SplashScreen.hideAsync();
     return (
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={darkTheme}>
         <Routes />
       </ThemeProvider>
     );
