@@ -20,6 +20,6 @@ export const Title = styled.Text`
   ${({ theme }: DefaultTheme) => css`
     color: ${theme.colors.primaryVariant};
     font-size: ${RFValue(theme.fontSizes[6])}px;
-    font-family: ${theme.fonts.secondary_700};
+    font-family: ${theme.fonts.secondary_600};
   `}
 `;
