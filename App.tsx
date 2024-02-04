@@ -12,8 +12,8 @@ import {
   Roboto_700Bold,
 } from '@expo-google-fonts/roboto';
 import { Routes } from '@routes/index';
-import { light } from '@themes/light';
 import { dark } from '@themes/dark';
+import { light } from '@themes/light';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
