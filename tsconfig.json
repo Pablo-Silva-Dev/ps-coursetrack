@@ -16,6 +16,7 @@
       "@services/*": ["services/*"],
       "@interfaces/*": ["interfaces/*"],
       "@routes/*": ["routes/*"],
+      "@styles/*": ["styles/*"],
       "@appConstants/*": ["appConstants/*"]
     }
   }

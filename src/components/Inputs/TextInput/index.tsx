@@ -1,13 +1,15 @@
 import { ForwardRefRenderFunction, forwardRef, useState } from 'react';
 import { TextInputProps, TextInput as TextInputRN } from 'react-native';
-import { Container, FocusedStyle, Label, TextInputEl } from './styles';
 import { useTheme } from 'styled-components/native';
+import { Container, FocusedStyle, Label, TextInputEl } from './styles';
+import { CSSProperties } from 'styled-components';
 
 interface InputTextProps extends TextInputProps {
   label: string;
+  containerStyle?: CSSProperties;
 }
 const InputBase: ForwardRefRenderFunction<TextInputRN, InputTextProps> = (
-  { label, ...rest },
+  { label, containerStyle, ...rest },
   ref
 ) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -15,7 +17,7 @@ const InputBase: ForwardRefRenderFunction<TextInputRN, InputTextProps> = (
   const theme = useTheme();
 
   return (
-    <Container>
+    <Container style={containerStyle as never}>
       <Label allowFontScaling={false}> {label}</Label>
       <TextInputEl
         onFocus={() => setIsFocused(true)}

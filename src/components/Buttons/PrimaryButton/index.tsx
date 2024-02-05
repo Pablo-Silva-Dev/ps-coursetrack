@@ -1,4 +1,4 @@
-import { TouchableOpacityProps } from 'react-native';
+import { ActivityIndicator, TouchableOpacityProps } from 'react-native';
 import { CSSProperties } from 'styled-components';
 import { Container, Title } from './styles';
 
@@ -13,6 +13,7 @@ interface ButtonProps extends TouchableOpacityProps {
 export function PrimaryButton({
   disabled,
   buttonTextStyle,
+  loading,
   title,
   ...rest
 }: ButtonProps) {
@@ -23,9 +24,13 @@ export function PrimaryButton({
       disabled={disabled}
       {...rest}
     >
-      <Title allowFontScaling={false} style={buttonTextStyle as never}>
-        {title}
-      </Title>
+      {loading ? (
+        <ActivityIndicator />
+      ) : (
+        <Title allowFontScaling={false} style={buttonTextStyle as never}>
+          {title}
+        </Title>
+      )}
     </Container>
   );
 }

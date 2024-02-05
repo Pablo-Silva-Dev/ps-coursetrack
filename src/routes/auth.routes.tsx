@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 
-import { InitialScreen } from '@screens/Home';
+import { InitialScreen } from '@screens/InitialScreen';
 import { SplashScreen } from 'screens/SplashScreen';
 
 import {
