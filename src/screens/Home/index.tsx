@@ -3,6 +3,7 @@ import { GoogleSignInButton } from '@components/Buttons/GoogleSignInButton';
 import { PrimaryButton } from '@components/Buttons/PrimaryButton';
 import { MaskedTextInput } from '@components/Inputs/MaskedTextInput';
 import { TextInput } from '@components/Inputs/TextInput';
+import { AppVersion } from '@components/Miscellaneous/AppVersion';
 import { Subtitle } from '@components/Typography/Subtitle';
 import { Text } from '@components/Typography/Text';
 import { Title } from '@components/Typography/Title';
@@ -28,6 +29,7 @@ export function InitialScreen() {
         value={val}
         onChangeText={setVal}
       />
+      <AppVersion version="1.4.5" />
     </Container>
   );
 }
