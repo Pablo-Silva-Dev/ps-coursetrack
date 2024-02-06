@@ -15,19 +15,19 @@ export const Container = styled.View`
 
 export const ImageContainer = styled.View`
   width: 100%;
-  flex: 1;
+  flex: 0.85;
 `;
 
 export const FormContainer = styled.ScrollView`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
+    flex: 1;
     padding: ${theme.spacings[7]}px ${theme.spacings[4]}px
       ${theme.spacings[12]}px;
-    flex: 1;
     background-color: ${theme.colors.background};
     border-top-left-radius: ${theme.sizes[6]}px;
     border-top-right-radius: ${theme.sizes[6]}px;
-    margin-top: -${theme.sizes[6]}px;
+    margin-top: -${theme.sizes[12]}px;
   `}
 `;
 

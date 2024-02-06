@@ -1,7 +1,8 @@
+import { TouchableOpacityProps } from 'react-native';
 import { light } from 'themes/light';
 import { AvatarUser, Container, Title } from './styles';
 
-interface PersonalSignInButtonProps {
+interface PersonalSignInButtonProps extends TouchableOpacityProps {
   userName: string;
   onPress: () => void;
   imgUrl?: string;
@@ -11,10 +12,11 @@ export function PersonalSignInButton({
   onPress,
   userName,
   imgUrl,
+  ...rest
 }: PersonalSignInButtonProps) {
   if (userName) {
     return (
-      <Container activeOpacity={0.8} onPress={onPress}>
+      <Container activeOpacity={0.8} onPress={onPress} {...rest}>
         <AvatarUser
           src={imgUrl}
           name={userName}

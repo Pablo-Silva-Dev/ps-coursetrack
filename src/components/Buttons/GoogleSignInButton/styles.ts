@@ -20,7 +20,7 @@ export const Container = styled.TouchableOpacity<ButtonProps>`
 
 export const Title = styled.Text`
   ${({ theme }: DefaultTheme) => css`
-    color: ${theme.colors.absolute_black};
+    color: ${theme.colors.title};
     font-size: ${RFValue(theme.fontSizes[6])}px;
     font-family: ${theme.fonts.secondary_600};
     margin-left: ${theme.spacings[4]}px;
