@@ -15,7 +15,7 @@ export const ContentContainer = styled.View`
 `;
 
 export const TitleContainer = styled.View`
-  max-width: 80%;
+  width: 80%;
 `;
 
 export const LogoContainer = styled.View`

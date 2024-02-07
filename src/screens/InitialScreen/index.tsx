@@ -12,7 +12,8 @@ import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { SvgXml } from 'react-native-svg';
-import { logoWithTextSvg } from '../../assets/svgs';
+import { useTheme } from 'styled-components';
+import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
 import {
   Container,
   FormContainer,
@@ -26,6 +27,9 @@ export function InitialScreen() {
   const IMAGE_TRANSITION_MS = 800;
   const [isAuthenticated] = useState(true);
   const navigation = useNavigation<TAuthRoutesBottomTabs>();
+  const theme = useTheme();
+  //@ts-ignore
+  const currentTheme = theme.title;
 
   return (
     <Container>
@@ -41,7 +45,9 @@ export function InitialScreen() {
       <FormContainer showsVerticalScrollIndicator={false}>
         <FormSubContainer>
           <SvgXml
-            xml={logoWithTextSvg}
+            xml={
+              currentTheme === 'light' ? logoWithTextSvg : logoWithTextWhiteSvg
+            }
             style={
               isAuthenticated
                 ? GlobalStyles.marginBottomLastElement

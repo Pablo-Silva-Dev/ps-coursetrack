@@ -8,21 +8,30 @@ import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 import { StatusBar } from 'expo-status-bar';
 import { Platform } from 'react-native';
 import { SvgXml } from 'react-native-svg';
-import { biometricsSvg, faceIdSvg, logoWithTextSvg } from '../../assets/svgs';
+import { useTheme } from 'styled-components';
+import {
+  biometricsSvg,
+  faceIdSvg,
+  logoWithTextSvg,
+  logoWithTextWhiteSvg,
+} from '../../assets/svgs';
 import { Container, Styles } from './styles';
 
 export function SecureAuthenticationScreen() {
   const navigation = useNavigation<TAuthRoutesBottomTabs>();
+  const theme = useTheme();
+  //@ts-ignore
+  const currentTheme = theme.title;
   return (
     <Container>
-      <StatusBar style="dark" />
-      <HeaderNavigation
-        screenTitle="Autenticação por biometria"
-        onBack={() => navigation.goBack()}
-        showsLogo
-      />
+      <StatusBar style={currentTheme === 'dark' ? 'light' : 'dark'} />
       {Platform.OS === 'android' ? (
         <>
+          <HeaderNavigation
+            screenTitle="Autenticação por biometria"
+            onBack={() => navigation.goBack()}
+            showsLogo
+          />
           <Text
             content={`Gostaria de utilizar sua biometria\npara realizar uma autenticação\nmais rápida e segura?`}
             style={Styles.text}
@@ -32,6 +41,11 @@ export function SecureAuthenticationScreen() {
         </>
       ) : (
         <>
+          <HeaderNavigation
+            screenTitle="Autenticação por reconhecimento facial"
+            onBack={() => navigation.goBack()}
+            showsLogo
+          />
           <Text
             content={`Gostaria de utilizar o reconhecimento facial\n para realizar uma autenticação\nmais rápida e segura?`}
             style={Styles.text}
@@ -45,7 +59,9 @@ export function SecureAuthenticationScreen() {
         title="Continuar com e-mail e senha"
         onPress={() => {}}
       />
-      <SvgXml xml={logoWithTextSvg} />
+      <SvgXml
+        xml={currentTheme === 'light' ? logoWithTextSvg : logoWithTextWhiteSvg}
+      />
     </Container>
   );
 }

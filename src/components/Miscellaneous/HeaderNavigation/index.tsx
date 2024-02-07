@@ -1,6 +1,10 @@
 import { SvgXml } from 'react-native-svg';
-import { CSSProperties } from 'styled-components';
-import { arrowLeftBlackSvg, logoSmallSvg } from '../../../assets/svgs';
+import { CSSProperties, useTheme } from 'styled-components';
+import {
+  arrowLeftBlackSvg,
+  arrowLeftWhiteSvg,
+  logoSmallSvg,
+} from '../../../assets/svgs';
 import {
   BackButton,
   Container,
@@ -25,11 +29,18 @@ export function HeaderNavigation({
   showsLogo,
   onPressLogo,
 }: HeaderNavigationProps) {
+  const theme = useTheme();
+  //@ts-ignore
+  const currentTheme = theme.title;
   return (
     <Container style={style as never}>
       <ContentContainer>
         <BackButton onPress={onBack}>
-          <SvgXml xml={arrowLeftBlackSvg} />
+          <SvgXml
+            xml={
+              currentTheme === 'dark' ? arrowLeftWhiteSvg : arrowLeftBlackSvg
+            }
+          />
         </BackButton>
         {screenTitle && (
           <TitleContainer>
