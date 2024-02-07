@@ -5,6 +5,8 @@ import { PrimaryButton } from '@components/Buttons/PrimaryButton';
 import { TextInput } from '@components/Inputs/TextInput';
 import { AppVersion } from '@components/Miscellaneous/AppVersion';
 import { Text } from '@components/Typography/Text';
+import { useNavigation } from '@react-navigation/native';
+import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 import { ColumnContainer, GlobalStyles } from '@styles/globals';
 import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
@@ -22,7 +24,9 @@ import {
 export function InitialScreen() {
   const bgImgPath = '../../assets/imgs/initial_screen_bg.png';
   const IMAGE_TRANSITION_MS = 800;
-  const [isAuthenticated] = useState(false);
+  const [isAuthenticated] = useState(true);
+  const navigation = useNavigation<TAuthRoutesBottomTabs>();
+
   return (
     <Container>
       <StatusBar style="light" />
@@ -58,7 +62,9 @@ export function InitialScreen() {
               >
                 <PersonalSignInButton
                   userName="Pablo Silva"
-                  onPress={() => {}}
+                  onPress={() =>
+                    navigation.navigate('SecureAuthenticationScreen')
+                  }
                   style={GlobalStyles.marginBottomDefault}
                 />
                 <Text content="ou" style={GlobalStyles.marginVerticalDefault} />

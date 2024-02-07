@@ -1,16 +1,17 @@
 import { NavigationContainer } from '@react-navigation/native';
-
 import { InitialScreen } from '@screens/InitialScreen';
-import { SplashScreen } from 'screens/SplashScreen';
+import { SecureAuthenticationScreen } from '@screens/SecureAuthenticationScreen';
+import { SplashScreen } from '@screens/SplashScreen';
 
 import {
   StackNavigationProp,
   createStackNavigator,
 } from '@react-navigation/stack';
 
-type TAuthRoutes = {
+export type TAuthRoutes = {
   SplashScreen: undefined;
   InitialScreen: undefined;
+  SecureAuthenticationScreen: undefined;
 };
 
 export type TAuthRoutesBottomTabs = StackNavigationProp<TAuthRoutes>;
@@ -34,6 +35,11 @@ const AuthRoutes = () => {
     {
       name: 'InitialScreen',
       component: InitialScreen,
+      options: screensConfig,
+    },
+    {
+      name: 'SecureAuthenticationScreen',
+      component: SecureAuthenticationScreen,
       options: screensConfig,
     },
   ];
