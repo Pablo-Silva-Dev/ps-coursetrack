@@ -2,12 +2,12 @@ import { Checkbox, CheckboxProps } from '@components/Miscellaneous/Checkbox';
 import { light } from '@themes/light';
 import { CSSProperties } from 'styled-components';
 import {
+  Button,
   ColumnContainer,
   Container,
   LinkText,
   RowContainer,
   Text,
-  TouchableOpacity,
 } from './styles';
 
 interface TermsCheckBoxProps extends CheckboxProps {
@@ -25,14 +25,14 @@ export function TermsCheckBox({ checked, onCheck, style }: TermsCheckBoxProps) {
       <ColumnContainer>
         <RowContainer>
           <Text>Concordo com os</Text>
-          <TouchableOpacity>
+          <Button>
             <LinkText> Termos </LinkText>
-          </TouchableOpacity>
+          </Button>
           <Text>e</Text>
         </RowContainer>
-        <TouchableOpacity>
+        <Button>
           <LinkText>Política de Privacidade</LinkText>
-        </TouchableOpacity>
+        </Button>
       </ColumnContainer>
     </Container>
   );

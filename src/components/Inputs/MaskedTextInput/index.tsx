@@ -1,3 +1,4 @@
+import { light } from '@themes/light';
 import { ForwardRefRenderFunction, forwardRef, useState } from 'react';
 import MaskInput from 'react-native-mask-input';
 import { Container, FocusedStyle, Label, TextInputEl } from './styles';
@@ -32,6 +33,7 @@ const InputBase: ForwardRefRenderFunction<
         editable={editable}
         allowFontScaling={false}
         autoFocus={autoFocus}
+        placeholderTextColor={light.theme.colors.absolute_gray}
         {...rest}
       />
     </Container>

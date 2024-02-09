@@ -1,6 +1,7 @@
 import { BorderlessButton } from '@components/Buttons/BorderlessButton';
 import { PersonalSignInButton } from '@components/Buttons/PersonalSignInButton';
 import { PrimaryButton } from '@components/Buttons/PrimaryButton';
+import { PasswordInput } from '@components/Inputs/PasswordInput';
 import { TextInput } from '@components/Inputs/TextInput';
 import { AppVersion } from '@components/Miscellaneous/AppVersion';
 import { Text } from '@components/Typography/Text';
@@ -87,7 +88,7 @@ export function InitialScreen() {
                 placeholder="Seu e-mail"
                 containerStyle={GlobalStyles.marginBottomDefault}
               />
-              <TextInput
+              <PasswordInput
                 label="Senha"
                 placeholder="Sua senha"
                 containerStyle={GlobalStyles.marginBottomDefault}

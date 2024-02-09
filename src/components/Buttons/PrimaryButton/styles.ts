@@ -13,12 +13,9 @@ export const Container = styled.TouchableOpacity<ButtonProps>`
   justify-content: center;
   align-items: center;
   border-radius: ${RFValue(8)}px;
-  background-color: ${({ theme, bgColor, disabled }: ButtonProps) =>
-    bgColor
-      ? bgColor
-      : disabled
-        ? theme.colors.placeholder
-        : theme.colors.primary};
+  background-color: ${({ theme, bgColor }: ButtonProps) =>
+    bgColor ? bgColor : theme.colors.primary};
+  opacity: ${({ disabled }: ButtonProps) => (disabled ? 0.64 : 1)};
 `;
 
 export const Title = styled.Text`

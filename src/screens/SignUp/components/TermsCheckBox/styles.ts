@@ -1,3 +1,4 @@
+import { TouchableOpacity } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { DefaultTheme } from 'styled-components';
 import styled, { css } from 'styled-components/native';
@@ -30,4 +31,4 @@ export const LinkText = styled.Text`
   `}
 `;
 
-export const TouchableOpacity = styled.TouchableOpacity``;
+export const Button = styled(TouchableOpacity).attrs({ activeOpacity: 0.8 })``;
