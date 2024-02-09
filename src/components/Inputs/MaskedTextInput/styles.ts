@@ -31,7 +31,6 @@ export const TextInputEl = styled(MaskInput)`
 
 export const Label = styled.Text`
   ${({ theme }: DefaultTheme) => css`
-    margin-left: ${theme.spacings[0]}px;
     margin-bottom: ${theme.spacings[0]}px;
     background-color: ${theme.colors.background};
     font-family: ${theme.fonts.primary_500};

@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { InitialScreen } from '@screens/InitialScreen';
 import { SecureAuthenticationScreen } from '@screens/SecureAuthenticationScreen';
+import { SignUp } from '@screens/SignUp';
 import { SplashScreen } from '@screens/SplashScreen';
 
 import {
@@ -12,6 +13,7 @@ export type TAuthRoutes = {
   SplashScreen: undefined;
   InitialScreen: undefined;
   SecureAuthenticationScreen: undefined;
+  SignUp: undefined;
 };
 
 export type TAuthRoutesBottomTabs = StackNavigationProp<TAuthRoutes>;
@@ -40,6 +42,11 @@ const AuthRoutes = () => {
     {
       name: 'SecureAuthenticationScreen',
       component: SecureAuthenticationScreen,
+      options: screensConfig,
+    },
+    {
+      name: 'SignUp',
+      component: SignUp,
       options: screensConfig,
     },
   ];

@@ -20,6 +20,9 @@ export const GlobalStyles = StyleSheet.create({
   marginBottomDefault: {
     marginBottom: light.theme.spacings[4],
   },
+  marginBottomLastElement: {
+    marginBottom: light.theme.spacings[10],
+  },
   marginVerticalSmall: {
     marginTop: light.theme.spacings[3],
     marginBottom: light.theme.spacings[3],
@@ -32,10 +35,19 @@ export const GlobalStyles = StyleSheet.create({
     marginTop: light.theme.spacings[6],
     marginBottom: light.theme.spacings[6],
   },
-  marginBottomLastElement: {
-    marginBottom: light.theme.spacings[10],
-  },
   containerCenterItems: {
     alignItems: 'center',
+  },
+  paddingTopDefault: {
+    paddingTop: light.theme.spacings[4],
+  },
+  paddingTopLarge: {
+    paddingTop: light.theme.spacings[10],
+  },
+  paddingBottomDefault: {
+    paddingBottom: light.theme.spacings[4],
+  },
+  paddingBottomLastElement: {
+    paddingBottom: light.theme.spacings[10],
   },
 });

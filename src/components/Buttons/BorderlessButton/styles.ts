@@ -9,7 +9,7 @@ interface ButtonProps extends DefaultTheme {
 export const Container = styled.TouchableOpacity`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
-    height: ${RFValue(theme.sizes[10])}px;
+    height: ${RFValue(theme.sizes[8])}px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -22,7 +22,7 @@ export const Container = styled.TouchableOpacity`
 export const Title = styled.Text`
   ${({ theme }: DefaultTheme) => css`
     color: ${theme.colors.primaryVariant};
-    font-size: ${RFValue(theme.fontSizes[5])}px;
+    font-size: ${RFValue(theme.fontSizes[4])}px;
     font-family: ${theme.fonts.secondary_600};
   `}
 `;

@@ -1,5 +1,4 @@
 import { BorderlessButton } from '@components/Buttons/BorderlessButton';
-import { GoogleSignInButton } from '@components/Buttons/GoogleSignInButton';
 import { PersonalSignInButton } from '@components/Buttons/PersonalSignInButton';
 import { PrimaryButton } from '@components/Buttons/PrimaryButton';
 import { TextInput } from '@components/Inputs/TextInput';
@@ -25,7 +24,7 @@ import {
 export function InitialScreen() {
   const bgImgPath = '../../assets/imgs/initial_screen_bg.png';
   const IMAGE_TRANSITION_MS = 800;
-  const [isAuthenticated] = useState(true);
+  const [isAuthenticated] = useState(false);
   const navigation = useNavigation<TAuthRoutesBottomTabs>();
   const theme = useTheme();
   //@ts-ignore
@@ -93,12 +92,16 @@ export function InitialScreen() {
                 placeholder="Sua senha"
                 containerStyle={GlobalStyles.marginBottomDefault}
               />
+              <BorderlessButton title="Esqueci minha senha" />
               <PrimaryButton
                 title="Entrar"
                 style={GlobalStyles.marginVerticalSmall}
               />
-              <Text content="ou" style={GlobalStyles.marginBottomDefault} />
-              <GoogleSignInButton style={GlobalStyles.marginBottomDefault} />
+              <BorderlessButton
+                style={GlobalStyles.marginBottomDefault}
+                title="Não tenho uma conta"
+                onPress={() => navigation.navigate('SignUp')}
+              />
             </>
           )}
           <ColumnContainer
