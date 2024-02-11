@@ -5,6 +5,7 @@ import { SecureAuthenticationScreen } from '@screens/SecureAuthenticationScreen'
 import { SignUp } from '@screens/SignUp';
 import { SplashScreen } from '@screens/SplashScreen';
 import { TermsAndPoliticsSelector } from '@screens/TermsAndPolicySelector';
+import { UseTerms } from '@screens/UseTerms';
 
 import {
   StackNavigationProp,
@@ -17,7 +18,7 @@ export type TAuthRoutes = {
   SecureAuthenticationScreen: undefined;
   SignUp: undefined;
   PasswordRecovery: undefined;
-  TermsAndPoliticsSelector: undefined;
+  UseTerms: undefined;
 };
 
 export type TAuthRoutesBottomTabs = StackNavigationProp<TAuthRoutes>;
@@ -61,6 +62,11 @@ const AuthRoutes = () => {
     {
       name: 'TermsAndPoliticsSelector',
       component: TermsAndPoliticsSelector,
+      options: screensConfig,
+    },
+    {
+      name: 'UseTerms',
+      component: UseTerms,
       options: screensConfig,
     },
   ];

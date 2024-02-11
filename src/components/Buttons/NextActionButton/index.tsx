@@ -10,6 +10,7 @@ interface ButtonProps extends TouchableOpacityProps {
   loading?: boolean;
   bgColor?: string;
   buttonTextStyle?: CSSProperties;
+  onPress: () => void;
 }
 
 export function NextActionButton({
@@ -17,6 +18,7 @@ export function NextActionButton({
   buttonTextStyle,
   loading,
   title,
+  onPress,
   ...rest
 }: ButtonProps) {
   const DISABLED_BUTTON_OPACITY = 0.8;
@@ -30,7 +32,7 @@ export function NextActionButton({
       {loading ? (
         <ActivityIndicator />
       ) : (
-        <ContentContainer>
+        <ContentContainer onPress={onPress}>
           <Title allowFontScaling={false} style={buttonTextStyle as never}>
             {title}
           </Title>
