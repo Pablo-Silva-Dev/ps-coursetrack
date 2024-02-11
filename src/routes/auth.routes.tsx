@@ -3,6 +3,7 @@ import { InitialScreen } from '@screens/InitialScreen';
 import { SecureAuthenticationScreen } from '@screens/SecureAuthenticationScreen';
 import { SignUp } from '@screens/SignUp';
 import { SplashScreen } from '@screens/SplashScreen';
+import { PasswordRecovery } from '@screens/PasswordRecovery';
 
 import {
   StackNavigationProp,
@@ -14,6 +15,7 @@ export type TAuthRoutes = {
   InitialScreen: undefined;
   SecureAuthenticationScreen: undefined;
   SignUp: undefined;
+  PasswordRecovery: undefined;
 };
 
 export type TAuthRoutesBottomTabs = StackNavigationProp<TAuthRoutes>;
@@ -47,6 +49,11 @@ const AuthRoutes = () => {
     {
       name: 'SignUp',
       component: SignUp,
+      options: screensConfig,
+    },
+    {
+      name: 'PasswordRecovery',
+      component: PasswordRecovery,
       options: screensConfig,
     },
   ];

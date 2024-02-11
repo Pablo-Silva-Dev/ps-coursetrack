@@ -93,7 +93,10 @@ export function InitialScreen() {
                 placeholder="Sua senha"
                 containerStyle={GlobalStyles.marginBottomDefault}
               />
-              <BorderlessButton title="Esqueci minha senha" />
+              <BorderlessButton
+                title="Esqueci minha senha"
+                onPress={() => navigation.navigate('PasswordRecovery')}
+              />
               <PrimaryButton
                 title="Entrar"
                 style={GlobalStyles.marginVerticalSmall}

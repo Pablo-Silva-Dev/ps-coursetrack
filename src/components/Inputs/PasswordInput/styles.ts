@@ -33,7 +33,7 @@ export const ChangePasswordVisibilityContainer = styled.View`
     border-radius: ${theme.spacings[0]}px;
     width: ${RFValue(40)}px;
     height: ${RFValue(40)}px;
-    margin-right: ${RFValue(4)}px;
+    margin-left: ${RFValue(theme.spacings[4])}px;
   `}
 `;
 

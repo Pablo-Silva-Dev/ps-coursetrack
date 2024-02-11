@@ -48,7 +48,7 @@ const InputBase: ForwardRefRenderFunction<TextInput, ITextInput> = (
           allowFontScaling={false}
           secureTextEntry={isPasswordVisibility}
           //@ts-ignore
-          placeholderTextColor={theme.colors.subtitle}
+          placeholderTextColor={theme.colors.absolute_gray}
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
           {...rest}

@@ -15,6 +15,9 @@ export const GlobalStyles = StyleSheet.create({
     marginTop: light.theme.spacings[4],
   },
   marginTopLarge: {
+    marginTop: light.theme.spacings[8],
+  },
+  marginTopExtraLarge: {
     marginTop: light.theme.spacings[10],
   },
   marginBottomDefault: {
