@@ -1,9 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { InitialScreen } from '@screens/InitialScreen';
+import { PasswordRecovery } from '@screens/PasswordRecovery';
 import { SecureAuthenticationScreen } from '@screens/SecureAuthenticationScreen';
 import { SignUp } from '@screens/SignUp';
 import { SplashScreen } from '@screens/SplashScreen';
-import { PasswordRecovery } from '@screens/PasswordRecovery';
+import { TermsAndPoliticsSelector } from '@screens/TermsAndPolicySelector';
 
 import {
   StackNavigationProp,
@@ -16,6 +17,7 @@ export type TAuthRoutes = {
   SecureAuthenticationScreen: undefined;
   SignUp: undefined;
   PasswordRecovery: undefined;
+  TermsAndPoliticsSelector: undefined;
 };
 
 export type TAuthRoutesBottomTabs = StackNavigationProp<TAuthRoutes>;
@@ -54,6 +56,11 @@ const AuthRoutes = () => {
     {
       name: 'PasswordRecovery',
       component: PasswordRecovery,
+      options: screensConfig,
+    },
+    {
+      name: 'TermsAndPoliticsSelector',
+      component: TermsAndPoliticsSelector,
       options: screensConfig,
     },
   ];

@@ -39,7 +39,7 @@ export function NextActionButton({
             size={theme.sizes[6]}
             name="arrow-right"
             //@ts-ignore
-            color={theme.colors.absolute_black}
+            color={theme.colors.title}
           />
         </ContentContainer>
       )}
