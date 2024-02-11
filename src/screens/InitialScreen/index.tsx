@@ -10,7 +10,7 @@ import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 import { ColumnContainer, GlobalStyles } from '@styles/globals';
 import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SvgXml } from 'react-native-svg';
 import { useTheme } from 'styled-components';
 import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
@@ -26,10 +26,15 @@ export function InitialScreen() {
   const bgImgPath = '../../assets/imgs/initial_screen_bg.png';
   const IMAGE_TRANSITION_MS = 800;
   const [isAuthenticated] = useState(false);
+  const [hasStoreUpdates] = useState(true);
   const navigation = useNavigation<TAuthRoutesBottomTabs>();
   const theme = useTheme();
   //@ts-ignore
   const currentTheme = theme.title;
+
+  useEffect(() => {
+    hasStoreUpdates && navigation.navigate('NewUpdateStore');
+  }, [hasStoreUpdates, navigation]);
 
   return (
     <Container>

@@ -12,6 +12,7 @@ import {
   StackNavigationProp,
   createStackNavigator,
 } from '@react-navigation/stack';
+import { NewUpdateStore } from '@screens/NewUpdateStore';
 
 export type TAuthRoutes = {
   SplashScreen: undefined;
@@ -21,6 +22,7 @@ export type TAuthRoutes = {
   PasswordRecovery: undefined;
   UseTerms: undefined;
   PolicyPrivacy: undefined;
+  NewUpdateStore: undefined;
 };
 
 export type TAuthRoutesBottomTabs = StackNavigationProp<TAuthRoutes>;
@@ -74,6 +76,11 @@ const AuthRoutes = () => {
     {
       name: 'PolicyPrivacy',
       component: PolicyPrivacy,
+      options: screensConfig,
+    },
+    {
+      name: 'NewUpdateStore',
+      component: NewUpdateStore,
       options: screensConfig,
     },
   ];

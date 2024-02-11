@@ -23,6 +23,9 @@ export const GlobalStyles = StyleSheet.create({
   marginBottomDefault: {
     marginBottom: light.theme.spacings[4],
   },
+  marginBottomLarge: {
+    marginBottom: light.theme.spacings[8],
+  },
   marginBottomLastElement: {
     marginBottom: light.theme.spacings[10],
   },
@@ -52,5 +55,8 @@ export const GlobalStyles = StyleSheet.create({
   },
   paddingBottomLastElement: {
     paddingBottom: light.theme.spacings[10],
+  },
+  textCenter: {
+    textAlign: 'center',
   },
 });
