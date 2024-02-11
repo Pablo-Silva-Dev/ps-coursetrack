@@ -2,7 +2,7 @@
 import { HeaderNavigation } from '@components/Miscellaneous/HeaderNavigation';
 import { Subtitle } from '@components/Typography/Subtitle';
 import { Text } from '@components/Typography/Text';
-import { useTermsText } from '@data/mocks';
+import { privacyPolicyText } from '@data/mocks';
 import { useNavigation } from '@react-navigation/native';
 import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 import { GlobalStyles } from '@styles/globals';
@@ -43,7 +43,7 @@ export function PolicyPrivacy() {
         />
       </TitleContainer>
       <TextContainer style={GlobalStyles.marginBottomLastElement}>
-        {useTermsText.map(text => (
+        {privacyPolicyText.map(text => (
           <Text
             content={text.content}
             key={text.id}
