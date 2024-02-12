@@ -15,11 +15,11 @@ import { SvgXml } from 'react-native-svg';
 import { useTheme } from 'styled-components';
 import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
 import {
-    Container,
-    FormContainer,
-    FormSubContainer,
-    ImageContainer,
-    Styles,
+  Container,
+  FormContainer,
+  FormSubContainer,
+  ImageContainer,
+  Styles,
 } from './styles';
 
 export function InitialScreen() {

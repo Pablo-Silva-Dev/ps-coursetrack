@@ -4,8 +4,10 @@ import axios, {
   InternalAxiosRequestConfig,
 } from 'axios';
 
+const envUrl = process.env.EXPO_PUBLIC_API_URL_LOCAL;
+
 export const api = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: envUrl,
   headers: {
     Accept: 'application/json',
     'Content-type': 'application/json',
@@ -24,10 +26,9 @@ api.interceptors.response.use(
   },
   (error: AxiosError<IApiResponse>) => {
     if (error.response) {
-      console.log('Axios error response:', error.response.data);
       return error;
     } else if (error.request) {
-      console.log('Axios error request:', error.request.data);
+      return error;
     }
   }
 );
