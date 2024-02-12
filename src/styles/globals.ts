@@ -12,7 +12,7 @@ export const ColumnContainer = styled.View`
 
 export const GlobalStyles = StyleSheet.create({
   marginTopSmall: {
-    marginTop: light.theme.spacings[3],
+    marginTop: light.theme.spacings[2],
   },
   marginTopMedium: {
     marginTop: light.theme.spacings[4],
@@ -24,7 +24,7 @@ export const GlobalStyles = StyleSheet.create({
     marginTop: light.theme.spacings[10],
   },
   marginBottomSmall: {
-    marginTop: light.theme.spacings[3],
+    marginTop: light.theme.spacings[2],
   },
   marginBottomMedium: {
     marginBottom: light.theme.spacings[4],
@@ -36,8 +36,8 @@ export const GlobalStyles = StyleSheet.create({
     marginBottom: light.theme.spacings[10],
   },
   marginVerticalSmall: {
-    marginTop: light.theme.spacings[3],
-    marginBottom: light.theme.spacings[3],
+    marginTop: light.theme.spacings[2],
+    marginBottom: light.theme.spacings[2],
   },
   marginVerticalMedium: {
     marginTop: light.theme.spacings[4],
@@ -52,7 +52,7 @@ export const GlobalStyles = StyleSheet.create({
     marginBottom: light.theme.spacings[10],
   },
   paddingTopSmall: {
-    paddingBottom: light.theme.spacings[3],
+    paddingBottom: light.theme.spacings[2],
   },
   paddingTopMedium: {
     paddingTop: light.theme.spacings[4],
@@ -76,8 +76,8 @@ export const GlobalStyles = StyleSheet.create({
     paddingBottom: light.theme.spacings[10],
   },
   paddingVerticalSmall: {
-    paddingTop: light.theme.spacings[3],
-    paddingBottom: light.theme.spacings[3],
+    paddingTop: light.theme.spacings[2],
+    paddingBottom: light.theme.spacings[2],
   },
   paddingVerticalMedium: {
     paddingTop: light.theme.spacings[4],

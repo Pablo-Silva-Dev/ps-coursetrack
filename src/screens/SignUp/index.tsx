@@ -42,14 +42,19 @@ export function SignUp() {
   };
 
   return (
-    <Container style={GlobalStyles.paddingTopMedium}>
+    <Container
+      style={[
+        GlobalStyles.paddingTopMedium,
+        GlobalStyles.paddingBottomExtraLarge,
+      ]}
+    >
       <StatusBar style={currentTheme === 'dark' ? 'light' : 'dark'} />
       <HeaderNavigation
         screenTitle="Cadastro"
         onBack={() => navigation.goBack()}
-        style={GlobalStyles.marginTopLarge}
+        style={GlobalStyles.marginTopExtraLarge}
       />
-      <FormContainer style={GlobalStyles.marginTopMedium}>
+      <FormContainer style={GlobalStyles.marginTopSmall}>
         <TextInput
           label="Nome"
           placeholder="Seu nome"

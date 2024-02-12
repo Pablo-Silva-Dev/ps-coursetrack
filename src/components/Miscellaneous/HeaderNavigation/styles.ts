@@ -10,8 +10,12 @@ export const Container = styled.View`
 `;
 
 export const ContentContainer = styled.View`
-  flex-direction: row;
-  align-items: center;
+  ${({ theme }: DefaultTheme) => css`
+    width: 100%;
+    padding-left: ${RFValue(theme.spacings[4])};
+    flex-direction: row;
+    align-items: center;
+  `}
 `;
 
 export const TitleContainer = styled.View`
