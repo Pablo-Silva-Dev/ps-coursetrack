@@ -42,14 +42,14 @@ export function SignUp() {
   };
 
   return (
-    <Container style={GlobalStyles.paddingTopDefault}>
+    <Container style={GlobalStyles.paddingTopMedium}>
       <StatusBar style={currentTheme === 'dark' ? 'light' : 'dark'} />
       <HeaderNavigation
         screenTitle="Cadastro"
         onBack={() => navigation.goBack()}
         style={GlobalStyles.marginTopLarge}
       />
-      <FormContainer style={GlobalStyles.marginTopDefault}>
+      <FormContainer style={GlobalStyles.marginTopMedium}>
         <TextInput
           label="Nome"
           placeholder="Seu nome"
@@ -98,7 +98,7 @@ export function SignUp() {
         <TermsCheckBox
           checked={acceptTerms}
           onCheck={() => setAcceptTerms(!acceptTerms)}
-          style={GlobalStyles.marginBottomDefault}
+          style={GlobalStyles.marginBottomMedium}
         />
         <PrimaryButton
           title="Cadastrar"

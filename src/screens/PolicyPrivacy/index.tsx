@@ -21,8 +21,8 @@ export function PolicyPrivacy() {
   return (
     <Container
       style={[
-        GlobalStyles.paddingTopDefault,
-        GlobalStyles.paddingBottomLastElement,
+        GlobalStyles.paddingTopMedium,
+        GlobalStyles.paddingBottomExtraLarge,
       ]}
     >
       <StatusBar style={currentTheme === 'dark' ? 'light' : 'dark'} />
@@ -31,23 +31,23 @@ export function PolicyPrivacy() {
         onBack={() => navigation.goBack()}
         style={GlobalStyles.marginTopExtraLarge}
       />
-      <TitleContainer style={GlobalStyles.marginBottomDefault}>
+      <TitleContainer style={GlobalStyles.marginBottomMedium}>
         <Subtitle
           content="Política de Privacidade"
           style={
             [
               GlobalStyles.marginTopLarge,
-              GlobalStyles.marginBottomDefault,
+              GlobalStyles.marginBottomMedium,
             ] as never
           }
         />
       </TitleContainer>
-      <TextContainer style={GlobalStyles.marginBottomLastElement}>
+      <TextContainer style={GlobalStyles.marginBottomExtraLarge}>
         {privacyPolicyText.map(text => (
           <Text
             content={text.content}
             key={text.id}
-            style={GlobalStyles.marginTopDefault}
+            style={GlobalStyles.marginTopMedium}
           />
         ))}
       </TextContainer>

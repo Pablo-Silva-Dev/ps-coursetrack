@@ -11,7 +11,10 @@ export const ColumnContainer = styled.View`
 `;
 
 export const GlobalStyles = StyleSheet.create({
-  marginTopDefault: {
+  marginTopSmall: {
+    marginTop: light.theme.spacings[3],
+  },
+  marginTopMedium: {
     marginTop: light.theme.spacings[4],
   },
   marginTopLarge: {
@@ -20,43 +23,78 @@ export const GlobalStyles = StyleSheet.create({
   marginTopExtraLarge: {
     marginTop: light.theme.spacings[10],
   },
-  marginBottomDefault: {
+  marginBottomSmall: {
+    marginTop: light.theme.spacings[3],
+  },
+  marginBottomMedium: {
     marginBottom: light.theme.spacings[4],
   },
   marginBottomLarge: {
     marginBottom: light.theme.spacings[8],
   },
-  marginBottomLastElement: {
+  marginBottomExtraLarge: {
     marginBottom: light.theme.spacings[10],
   },
   marginVerticalSmall: {
     marginTop: light.theme.spacings[3],
     marginBottom: light.theme.spacings[3],
   },
-  marginVerticalDefault: {
+  marginVerticalMedium: {
     marginTop: light.theme.spacings[4],
     marginBottom: light.theme.spacings[4],
   },
   marginVerticalLarge: {
-    marginTop: light.theme.spacings[6],
-    marginBottom: light.theme.spacings[6],
+    marginTop: light.theme.spacings[8],
+    marginBottom: light.theme.spacings[8],
   },
-  containerCenterItems: {
-    alignItems: 'center',
+  marginVerticalExtraLarge: {
+    marginTop: light.theme.spacings[10],
+    marginBottom: light.theme.spacings[10],
   },
-  paddingTopDefault: {
+  paddingTopSmall: {
+    paddingBottom: light.theme.spacings[3],
+  },
+  paddingTopMedium: {
     paddingTop: light.theme.spacings[4],
   },
   paddingTopLarge: {
+    paddingTop: light.theme.spacings[8],
+  },
+  paddingTopExtraLarge: {
     paddingTop: light.theme.spacings[10],
   },
-  paddingBottomDefault: {
+  paddingBottomSmall: {
+    paddingBottom: light.theme.spacings[3],
+  },
+  paddingBottomMedium: {
     paddingBottom: light.theme.spacings[4],
   },
-  paddingBottomLastElement: {
+  paddingBottomLarge: {
+    paddingBottom: light.theme.spacings[8],
+  },
+  paddingBottomExtraLarge: {
+    paddingBottom: light.theme.spacings[10],
+  },
+  paddingVerticalSmall: {
+    paddingTop: light.theme.spacings[3],
+    paddingBottom: light.theme.spacings[3],
+  },
+  paddingVerticalMedium: {
+    paddingTop: light.theme.spacings[4],
+    paddingBottom: light.theme.spacings[4],
+  },
+  paddingVerticalLarge: {
+    paddingTop: light.theme.spacings[8],
+    paddingBottom: light.theme.spacings[8],
+  },
+  paddingVerticalExtraLarge: {
+    paddingTop: light.theme.spacings[10],
     paddingBottom: light.theme.spacings[10],
   },
   textCenter: {
     textAlign: 'center',
+  },
+  containerCenterItems: {
+    alignItems: 'center',
   },
 });

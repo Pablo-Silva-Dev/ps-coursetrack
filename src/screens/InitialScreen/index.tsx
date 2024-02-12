@@ -15,18 +15,18 @@ import { SvgXml } from 'react-native-svg';
 import { useTheme } from 'styled-components';
 import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
 import {
-  Container,
-  FormContainer,
-  FormSubContainer,
-  ImageContainer,
-  Styles,
+    Container,
+    FormContainer,
+    FormSubContainer,
+    ImageContainer,
+    Styles,
 } from './styles';
 
 export function InitialScreen() {
   const bgImgPath = '../../assets/imgs/initial_screen_bg.png';
   const IMAGE_TRANSITION_MS = 800;
   const [isAuthenticated] = useState(false);
-  const [hasStoreUpdates] = useState(true);
+  const [hasStoreUpdates] = useState(false);
   const navigation = useNavigation<TAuthRoutesBottomTabs>();
   const theme = useTheme();
   //@ts-ignore
@@ -55,15 +55,15 @@ export function InitialScreen() {
             }
             style={
               isAuthenticated
-                ? GlobalStyles.marginBottomLastElement
-                : GlobalStyles.marginBottomDefault
+                ? GlobalStyles.marginBottomExtraLarge
+                : GlobalStyles.marginBottomMedium
             }
           />
           {isAuthenticated ? (
             <>
               <Text
                 content="Seja bem vindo(a) novamente!"
-                style={GlobalStyles.marginBottomDefault}
+                style={GlobalStyles.marginBottomMedium}
               />
               <ColumnContainer
                 style={[
@@ -76,9 +76,9 @@ export function InitialScreen() {
                   onPress={() =>
                     navigation.navigate('SecureAuthenticationScreen')
                   }
-                  style={GlobalStyles.marginBottomDefault}
+                  style={GlobalStyles.marginBottomMedium}
                 />
-                <Text content="ou" style={GlobalStyles.marginVerticalDefault} />
+                <Text content="ou" style={GlobalStyles.marginVerticalMedium} />
                 <BorderlessButton title="Entrar com outra conta" />
               </ColumnContainer>
             </>
@@ -86,17 +86,17 @@ export function InitialScreen() {
             <>
               <Text
                 content="Faça login para acessar a plataforma"
-                style={GlobalStyles.marginBottomDefault}
+                style={GlobalStyles.marginBottomMedium}
               />
               <TextInput
                 label="E-mail"
                 placeholder="Seu e-mail"
-                containerStyle={GlobalStyles.marginBottomDefault}
+                containerStyle={GlobalStyles.marginBottomMedium}
               />
               <PasswordInput
                 label="Senha"
                 placeholder="Sua senha"
-                containerStyle={GlobalStyles.marginBottomDefault}
+                containerStyle={GlobalStyles.marginBottomMedium}
               />
               <BorderlessButton
                 title="Esqueci minha senha"
@@ -107,7 +107,7 @@ export function InitialScreen() {
                 style={GlobalStyles.marginVerticalSmall}
               />
               <BorderlessButton
-                style={GlobalStyles.marginBottomDefault}
+                style={GlobalStyles.marginBottomMedium}
                 title="Não tenho uma conta"
                 onPress={() => navigation.navigate('SignUp')}
               />
@@ -117,7 +117,7 @@ export function InitialScreen() {
             style={
               isAuthenticated
                 ? GlobalStyles.marginTopLarge
-                : GlobalStyles.marginBottomLastElement
+                : GlobalStyles.marginBottomExtraLarge
             }
           >
             <AppVersion version="1.4.5" />

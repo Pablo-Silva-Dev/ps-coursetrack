@@ -24,8 +24,8 @@ export function PasswordRecovery() {
   return (
     <Container
       style={[
-        GlobalStyles.paddingTopDefault,
-        GlobalStyles.paddingBottomLastElement,
+        GlobalStyles.paddingTopMedium,
+        GlobalStyles.paddingBottomExtraLarge,
       ]}
     >
       <StatusBar style={currentTheme === 'dark' ? 'light' : 'dark'} />
@@ -38,7 +38,7 @@ export function PasswordRecovery() {
         content={`Informe seu e-mail de acesso. Caso o e-mail\ninformado exista na nossa base de dados,\nvocê receberá por email as instruções para\nrecuperar sua senha.`}
         style={GlobalStyles.marginTopLarge}
       />
-      <FormContainer style={GlobalStyles.marginTopDefault}>
+      <FormContainer style={GlobalStyles.marginTopMedium}>
         <TextInput
           label="E-mail"
           placeholder="Seu e-mail"

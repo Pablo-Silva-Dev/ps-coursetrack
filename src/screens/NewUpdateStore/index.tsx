@@ -7,9 +7,9 @@ import { StatusBar } from 'expo-status-bar';
 import { SvgXml } from 'react-native-svg';
 import { useTheme } from 'styled-components';
 import {
-  logoWithTextSvg,
-  logoWithTextWhiteSvg,
-  newStoreUpdateSvg,
+    logoWithTextSvg,
+    logoWithTextWhiteSvg,
+    newStoreUpdateSvg,
 } from '../../assets/svgs';
 import { Container, ContentContainer, LogoContainer } from './styles';
 
@@ -21,8 +21,8 @@ export function NewUpdateStore() {
   return (
     <Container
       style={[
-        GlobalStyles.paddingTopDefault,
-        GlobalStyles.paddingBottomLastElement,
+        GlobalStyles.paddingTopMedium,
+        GlobalStyles.paddingBottomExtraLarge,
       ]}
     >
       <StatusBar style={currentTheme === 'dark' ? 'light' : 'dark'} />
@@ -43,7 +43,7 @@ export function NewUpdateStore() {
           style={
             [
               GlobalStyles.marginTopLarge,
-              GlobalStyles.marginBottomDefault,
+              GlobalStyles.marginBottomMedium,
             ] as never
           }
         />

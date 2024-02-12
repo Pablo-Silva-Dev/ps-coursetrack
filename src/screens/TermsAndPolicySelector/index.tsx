@@ -20,8 +20,8 @@ export function TermsAndPoliticsSelector() {
   return (
     <Container
       style={[
-        GlobalStyles.paddingTopDefault,
-        GlobalStyles.paddingBottomLastElement,
+        GlobalStyles.paddingTopMedium,
+        GlobalStyles.paddingBottomExtraLarge,
       ]}
     >
       <StatusBar style={currentTheme === 'dark' ? 'light' : 'dark'} />
@@ -34,11 +34,11 @@ export function TermsAndPoliticsSelector() {
         content="Selecione um documento para visualizar"
         style={GlobalStyles.marginTopLarge}
       />
-      <FormContainer style={GlobalStyles.marginTopDefault}>
+      <FormContainer style={GlobalStyles.marginTopMedium}>
         <NextActionButton
           title="Termos de Uso"
           onPress={() => navigation.navigate('UseTerms')}
-          style={GlobalStyles.marginBottomDefault}
+          style={GlobalStyles.marginBottomMedium}
         />
         <NextActionButton
           title="Política de Privacidade"
