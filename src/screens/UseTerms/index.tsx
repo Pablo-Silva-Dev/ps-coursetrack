@@ -29,17 +29,12 @@ export function UseTerms() {
       <HeaderNavigation
         screenTitle="Termos de Uso"
         onBack={() => navigation.goBack()}
-        style={GlobalStyles.marginTopExtraLarge}
+        style={GlobalStyles.marginTopLarge}
       />
       <TitleContainer style={GlobalStyles.marginBottomSmall}>
         <Subtitle
           content="Termos de Uso"
-          style={
-            [
-              GlobalStyles.marginTopLarge,
-              GlobalStyles.marginBottomMedium,
-            ] as never
-          }
+          style={GlobalStyles.marginVerticalMedium as never}
         />
       </TitleContainer>
       <TextContainer style={GlobalStyles.marginBottomLarge}>

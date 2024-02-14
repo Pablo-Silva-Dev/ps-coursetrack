@@ -12,7 +12,8 @@ export const Container = styled.View`
 export const ContentContainer = styled.View`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
-    padding-left: ${RFValue(theme.spacings[2])};
+    padding-left: ${RFValue(theme.spacings[2])}px;
+    padding-right: ${RFValue(theme.spacings[2])}px;
     flex-direction: row;
     align-items: center;
   `}
@@ -28,6 +29,7 @@ export const LogoContainer = styled.View`
     max-height: ${RFValue(theme.spacings[8])}px;
     justify-content: center;
     align-items: center;
+    margin-right: ${RFValue(theme.spacings[5])}px;
   `}
 `;
 

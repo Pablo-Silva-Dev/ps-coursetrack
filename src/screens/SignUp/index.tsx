@@ -9,13 +9,11 @@ import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 import { GlobalStyles } from '@styles/globals';
 import { StatusBar } from 'expo-status-bar';
 import { RefObject, useRef, useState } from 'react';
-import { TextInput as TextInputRN } from 'react-native';
+import { Platform, TextInput as TextInputRN } from 'react-native';
 import { Masks } from 'react-native-mask-input';
-import { SvgXml } from 'react-native-svg';
 import { useTheme } from 'styled-components';
-import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
 import { TermsCheckBox } from './components/TermsCheckBox';
-import { Container, FormContainer, LogoContainer } from './styles';
+import { Container, FormContainer } from './styles';
 
 export function SignUp() {
   const navigation = useNavigation<TAuthRoutesBottomTabs>();
@@ -52,9 +50,17 @@ export function SignUp() {
       <HeaderNavigation
         screenTitle="Cadastro"
         onBack={() => navigation.goBack()}
-        style={GlobalStyles.marginTopExtraLarge}
+        showsLogo
+        style={
+          Platform.OS === 'ios'
+            ? GlobalStyles.marginTopExtraLarge
+            : GlobalStyles.marginTopLarge
+        }
       />
-      <FormContainer style={GlobalStyles.marginTopSmall}>
+      <FormContainer
+        style={GlobalStyles.marginTopSmall}
+        showsVerticalScrollIndicator={false}
+      >
         <TextInput
           label="Nome"
           placeholder="Seu nome"
@@ -111,13 +117,6 @@ export function SignUp() {
           disabled={!acceptTerms}
         />
       </FormContainer>
-      <LogoContainer>
-        <SvgXml
-          xml={
-            currentTheme === 'light' ? logoWithTextSvg : logoWithTextWhiteSvg
-          }
-        />
-      </LogoContainer>
     </Container>
   );
 }

@@ -47,14 +47,14 @@ export function HeaderNavigation({
             <Title>{screenTitle}</Title>
           </TitleContainer>
         )}
+        {showsLogo && (
+          <BackButton onPress={onPressLogo} activeOpacity={0.8}>
+            <LogoContainer>
+              <SvgXml xml={logoSmallSvg} width={40} height={40} />
+            </LogoContainer>
+          </BackButton>
+        )}
       </ContentContainer>
-      {showsLogo && (
-        <BackButton onPress={onPressLogo} activeOpacity={0.8}>
-          <LogoContainer>
-            <SvgXml xml={logoSmallSvg} width={40} height={40} />
-          </LogoContainer>
-        </BackButton>
-      )}
     </Container>
   );
 }

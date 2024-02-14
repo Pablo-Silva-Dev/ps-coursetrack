@@ -8,6 +8,7 @@ import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 import { GlobalStyles } from '@styles/globals';
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
+import { Platform } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 import { useTheme } from 'styled-components';
 import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
@@ -32,7 +33,11 @@ export function PasswordRecovery() {
       <HeaderNavigation
         screenTitle="Recuperação de senha"
         onBack={() => navigation.goBack()}
-        style={GlobalStyles.marginTopExtraLarge}
+        style={
+          Platform.OS === 'ios'
+            ? GlobalStyles.marginTopExtraLarge
+            : GlobalStyles.marginTopLarge
+        }
       />
       <FormContainer style={GlobalStyles.marginTopMedium}>
         <Text

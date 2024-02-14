@@ -29,17 +29,12 @@ export function PolicyPrivacy() {
       <HeaderNavigation
         screenTitle="Política de Privacidade"
         onBack={() => navigation.goBack()}
-        style={GlobalStyles.marginTopExtraLarge}
+        style={GlobalStyles.marginTopLarge}
       />
       <TitleContainer style={GlobalStyles.marginBottomSmall}>
         <Subtitle
           content="Política de Privacidade"
-          style={
-            [
-              GlobalStyles.marginTopLarge,
-              GlobalStyles.marginBottomMedium,
-            ] as never
-          }
+          style={GlobalStyles.marginVerticalMedium as never}
         />
       </TitleContainer>
       <TextContainer style={GlobalStyles.marginBottomLarge}>
