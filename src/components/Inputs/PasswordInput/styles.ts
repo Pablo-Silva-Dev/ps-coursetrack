@@ -1,5 +1,5 @@
 import { light } from '@themes/light';
-import { TextInput } from 'react-native';
+import { TextInput, Platform } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { DefaultTheme } from 'styled-components';
 import styled, { css } from 'styled-components/native';
@@ -31,8 +31,8 @@ export const ChangePasswordVisibilityContainer = styled.View`
     justify-content: center;
     align-items: center;
     border-radius: ${theme.spacings[0]}px;
-    width: ${RFValue(40)}px;
-    height: ${RFValue(40)}px;
+    width: ${Platform.OS === 'ios' ? RFValue(32) : RFValue(40)}px;
+    height: ${Platform.OS === 'ios' ? RFValue(44) : RFValue(48)}px;
     margin-left: ${RFValue(theme.spacings[4])}px;
   `}
 `;
