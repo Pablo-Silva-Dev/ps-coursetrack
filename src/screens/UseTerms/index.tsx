@@ -31,7 +31,7 @@ export function UseTerms() {
         onBack={() => navigation.goBack()}
         style={GlobalStyles.marginTopExtraLarge}
       />
-      <TitleContainer style={GlobalStyles.marginBottomMedium}>
+      <TitleContainer style={GlobalStyles.marginBottomSmall}>
         <Subtitle
           content="Termos de Uso"
           style={
@@ -42,7 +42,7 @@ export function UseTerms() {
           }
         />
       </TitleContainer>
-      <TextContainer style={GlobalStyles.marginBottomExtraLarge}>
+      <TextContainer style={GlobalStyles.marginBottomLarge}>
         {useTermsText.map(text => (
           <Text
             content={text.content}

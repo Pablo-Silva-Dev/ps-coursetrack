@@ -12,7 +12,7 @@ export const Container = styled.View`
 export const ContentContainer = styled.View`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
-    padding-left: ${RFValue(theme.spacings[4])};
+    padding-left: ${RFValue(theme.spacings[2])};
     flex-direction: row;
     align-items: center;
   `}
@@ -35,7 +35,7 @@ export const Title = styled.Text`
   ${({ theme }: DefaultTheme) => css`
     font-size: ${RFValue(theme.fontSizes[8])}px;
     font-family: ${theme.fonts.primary_700};
-    margin-left: ${RFValue(theme.spacings[4])}px;
+    margin-left: ${RFValue(theme.spacings[3])}px;
     color: ${theme.colors.title};
   `}
 `;

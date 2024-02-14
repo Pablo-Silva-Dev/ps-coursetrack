@@ -15,11 +15,17 @@ export const Container = styled.View`
 `;
 
 export const TextContainer = styled.ScrollView`
-  width: 100%;
+  ${({ theme }: DefaultTheme) => css`
+    width: 100%;
+    padding: 0 ${RFValue(theme.spacings[2])}px 0;
+  `}
 `;
 
 export const TitleContainer = styled.View`
-  width: 100%;
+  ${({ theme }: DefaultTheme) => css`
+    width: 100%;
+    padding: 0 ${RFValue(theme.spacings[2])}px 0;
+  `}
 `;
 
 export const Styles = StyleSheet.create({

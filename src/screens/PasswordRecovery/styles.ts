@@ -1,4 +1,3 @@
-import { StyleSheet } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { DefaultTheme } from 'styled-components';
 import styled, { css } from 'styled-components/native';
@@ -17,12 +16,6 @@ export const Container = styled.View`
 export const FormContainer = styled.ScrollView`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
-    padding: ${RFValue(theme.spacings[4])}px;
+    padding: ${RFValue(theme.spacings[2])}px;
   `}
 `;
-
-export const Styles = StyleSheet.create({
-  text: {
-    textAlign: 'center',
-  },
-});

@@ -1,3 +1,4 @@
+import { getScreenHeightPercent } from '@utils/layout';
 import { StyleSheet } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { DefaultTheme } from 'styled-components';
@@ -6,7 +7,7 @@ import styled, { css } from 'styled-components/native';
 export const Container = styled.View`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
-    flex: 1;
+    height: ${RFValue(getScreenHeightPercent(100))}px;
     justify-content: center;
     align-items: center;
     background-color: ${theme.colors.background};
@@ -15,24 +16,21 @@ export const Container = styled.View`
 
 export const ImageContainer = styled.View`
   width: 100%;
-  flex: 0.85;
+  flex: 1;
 `;
 
-export const FormContainer = styled.ScrollView`
+export const FormContainer = styled.View`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
-    flex: 1;
-    padding: ${theme.spacings[7]}px ${theme.spacings[4]}px
+    min-height: ${RFValue(getScreenHeightPercent(70))}px;
+    align-items: center;
+    padding: ${theme.spacings[7]}px ${theme.spacings[7]}px
       ${theme.spacings[12]}px;
     background-color: ${theme.colors.background};
     border-top-left-radius: ${theme.sizes[6]}px;
     border-top-right-radius: ${theme.sizes[6]}px;
     margin-top: -${theme.sizes[12]}px;
   `}
-`;
-
-export const FormSubContainer = styled.View`
-  align-items: center;
 `;
 
 export const Text = styled.Text`

@@ -34,11 +34,11 @@ export function PasswordRecovery() {
         onBack={() => navigation.goBack()}
         style={GlobalStyles.marginTopExtraLarge}
       />
-      <Text
-        content={`Informe seu e-mail de acesso. Caso o e-mail\ninformado exista na nossa base de dados,\nvocê receberá por email as instruções para\nrecuperar sua senha.`}
-        style={GlobalStyles.marginTopLarge}
-      />
       <FormContainer style={GlobalStyles.marginTopMedium}>
+        <Text
+          content={`Informe seu e-mail de acesso. Caso o e-mail\ninformado exista na nossa base de dados,\nvocê receberá por email as instruções para\nrecuperar sua senha.`}
+          style={GlobalStyles.marginBottomMedium}
+        />
         <TextInput
           label="E-mail"
           placeholder="Seu e-mail"

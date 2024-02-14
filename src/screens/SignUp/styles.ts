@@ -17,7 +17,15 @@ export const Container = styled.View`
 export const FormContainer = styled.ScrollView`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
-    padding: ${RFValue(theme.spacings[4])}px;
+    padding: ${RFValue(theme.spacings[2])}px;
+  `}
+`;
+
+export const LogoContainer = styled.View`
+  ${({ theme }: DefaultTheme) => css`
+    width: 100%;
+    align-items: center;
+    margin: ${RFValue(theme.spacings[2])}px;
   `}
 `;
 

@@ -15,7 +15,7 @@ import { SvgXml } from 'react-native-svg';
 import { useTheme } from 'styled-components';
 import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
 import { TermsCheckBox } from './components/TermsCheckBox';
-import { Container, FormContainer } from './styles';
+import { Container, FormContainer, LogoContainer } from './styles';
 
 export function SignUp() {
   const navigation = useNavigation<TAuthRoutesBottomTabs>();
@@ -111,9 +111,13 @@ export function SignUp() {
           disabled={!acceptTerms}
         />
       </FormContainer>
-      <SvgXml
-        xml={currentTheme === 'light' ? logoWithTextSvg : logoWithTextWhiteSvg}
-      />
+      <LogoContainer>
+        <SvgXml
+          xml={
+            currentTheme === 'light' ? logoWithTextSvg : logoWithTextWhiteSvg
+          }
+        />
+      </LogoContainer>
     </Container>
   );
 }

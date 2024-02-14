@@ -14,13 +14,7 @@ import { useEffect, useState } from 'react';
 import { SvgXml } from 'react-native-svg';
 import { useTheme } from 'styled-components';
 import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
-import {
-  Container,
-  FormContainer,
-  FormSubContainer,
-  ImageContainer,
-  Styles,
-} from './styles';
+import { Container, FormContainer, ImageContainer, Styles } from './styles';
 
 export function InitialScreen() {
   const bgImgPath = '../../assets/imgs/initial_screen_bg.png';
@@ -47,82 +41,80 @@ export function InitialScreen() {
           transition={IMAGE_TRANSITION_MS}
         />
       </ImageContainer>
-      <FormContainer showsVerticalScrollIndicator={false}>
-        <FormSubContainer>
-          <SvgXml
-            xml={
-              currentTheme === 'light' ? logoWithTextSvg : logoWithTextWhiteSvg
-            }
-            style={
-              isAuthenticated
-                ? GlobalStyles.marginBottomExtraLarge
-                : GlobalStyles.marginBottomMedium
-            }
-          />
-          {isAuthenticated ? (
-            <>
-              <Text
-                content="Seja bem vindo(a) novamente!"
+      <FormContainer>
+        <SvgXml
+          xml={
+            currentTheme === 'light' ? logoWithTextSvg : logoWithTextWhiteSvg
+          }
+          style={
+            isAuthenticated
+              ? GlobalStyles.marginBottomExtraLarge
+              : GlobalStyles.marginBottomMedium
+          }
+        />
+        {isAuthenticated ? (
+          <>
+            <Text
+              content="Seja bem vindo(a) novamente!"
+              style={GlobalStyles.marginBottomMedium}
+            />
+            <ColumnContainer
+              style={[
+                GlobalStyles.marginTopLarge,
+                GlobalStyles.containerCenterItems,
+              ]}
+            >
+              <PersonalSignInButton
+                userName="Pablo Silva"
+                onPress={() =>
+                  navigation.navigate('SecureAuthenticationScreen')
+                }
                 style={GlobalStyles.marginBottomMedium}
               />
-              <ColumnContainer
-                style={[
-                  GlobalStyles.marginTopLarge,
-                  GlobalStyles.containerCenterItems,
-                ]}
-              >
-                <PersonalSignInButton
-                  userName="Pablo Silva"
-                  onPress={() =>
-                    navigation.navigate('SecureAuthenticationScreen')
-                  }
-                  style={GlobalStyles.marginBottomMedium}
-                />
-                <Text content="ou" style={GlobalStyles.marginVerticalMedium} />
-                <BorderlessButton title="Entrar com outra conta" />
-              </ColumnContainer>
-            </>
-          ) : (
-            <>
-              <Text
-                content="Faça login para acessar a plataforma"
-                style={GlobalStyles.marginBottomMedium}
-              />
-              <TextInput
-                label="E-mail"
-                placeholder="Seu e-mail"
-                containerStyle={GlobalStyles.marginBottomMedium}
-              />
-              <PasswordInput
-                label="Senha"
-                placeholder="Sua senha"
-                containerStyle={GlobalStyles.marginBottomMedium}
-              />
-              <BorderlessButton
-                title="Esqueci minha senha"
-                onPress={() => navigation.navigate('PasswordRecovery')}
-              />
-              <PrimaryButton
-                title="Entrar"
-                style={GlobalStyles.marginVerticalSmall}
-              />
-              <BorderlessButton
-                style={GlobalStyles.marginBottomMedium}
-                title="Não tenho uma conta"
-                onPress={() => navigation.navigate('SignUp')}
-              />
-            </>
-          )}
-          <ColumnContainer
-            style={
-              isAuthenticated
-                ? GlobalStyles.marginTopLarge
-                : GlobalStyles.marginBottomExtraLarge
-            }
-          >
-            <AppVersion version="1.4.5" />
-          </ColumnContainer>
-        </FormSubContainer>
+              <Text content="ou" style={GlobalStyles.marginVerticalMedium} />
+              <BorderlessButton title="Entrar com outra conta" />
+            </ColumnContainer>
+          </>
+        ) : (
+          <>
+            <Text
+              content="Faça login para acessar a plataforma"
+              style={GlobalStyles.marginBottomMedium}
+            />
+            <TextInput
+              label="E-mail"
+              placeholder="Seu e-mail"
+              containerStyle={GlobalStyles.marginBottomMedium}
+            />
+            <PasswordInput
+              label="Senha"
+              placeholder="Sua senha"
+              containerStyle={GlobalStyles.marginBottomMedium}
+            />
+            <BorderlessButton
+              title="Esqueci minha senha"
+              onPress={() => navigation.navigate('PasswordRecovery')}
+            />
+            <PrimaryButton
+              title="Entrar"
+              style={GlobalStyles.marginVerticalSmall}
+            />
+            <BorderlessButton
+              style={GlobalStyles.marginBottomMedium}
+              title="Não tenho uma conta"
+              onPress={() => navigation.navigate('SignUp')}
+            />
+          </>
+        )}
+        <ColumnContainer
+          style={
+            isAuthenticated
+              ? GlobalStyles.marginTopLarge
+              : GlobalStyles.marginBottomExtraLarge
+          }
+        >
+          <AppVersion version="1.4.5" />
+        </ColumnContainer>
       </FormContainer>
     </Container>
   );

@@ -31,7 +31,7 @@ export function PolicyPrivacy() {
         onBack={() => navigation.goBack()}
         style={GlobalStyles.marginTopExtraLarge}
       />
-      <TitleContainer style={GlobalStyles.marginBottomMedium}>
+      <TitleContainer style={GlobalStyles.marginBottomSmall}>
         <Subtitle
           content="Política de Privacidade"
           style={
@@ -42,7 +42,7 @@ export function PolicyPrivacy() {
           }
         />
       </TitleContainer>
-      <TextContainer style={GlobalStyles.marginBottomExtraLarge}>
+      <TextContainer style={GlobalStyles.marginBottomLarge}>
         {privacyPolicyText.map(text => (
           <Text
             content={text.content}
