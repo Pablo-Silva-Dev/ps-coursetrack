@@ -3,12 +3,13 @@ import { BorderlessButton } from '@components/Buttons/BorderlessButton';
 import { PrimaryButton } from '@components/Buttons/PrimaryButton';
 import { HeaderNavigation } from '@components/Miscellaneous/HeaderNavigation';
 import { Text } from '@components/Typography/Text';
+import { IStyledTheme } from '@interfaces/theme';
 import { useNavigation } from '@react-navigation/native';
 import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 import { StatusBar } from 'expo-status-bar';
 import { Platform } from 'react-native';
 import { SvgXml } from 'react-native-svg';
-import { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components/native';
 import {
   biometricsSvg,
   faceIdSvg,
@@ -19,8 +20,7 @@ import { Container, Styles } from './styles';
 
 export function SecureAuthenticationScreen() {
   const navigation = useNavigation<TAuthRoutesBottomTabs>();
-  const theme = useTheme();
-  //@ts-ignore
+  const theme = useTheme() as IStyledTheme;
   const currentTheme = theme.title;
   return (
     <Container>

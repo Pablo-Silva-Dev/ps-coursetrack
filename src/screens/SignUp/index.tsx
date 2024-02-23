@@ -4,6 +4,7 @@ import { MaskedTextInput } from '@components/Inputs/MaskedTextInput';
 import { PasswordInput } from '@components/Inputs/PasswordInput';
 import { TextInput } from '@components/Inputs/TextInput';
 import { HeaderNavigation } from '@components/Miscellaneous/HeaderNavigation';
+import { IStyledTheme } from '@interfaces/theme';
 import { useNavigation } from '@react-navigation/native';
 import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 import { GlobalStyles } from '@styles/globals';
@@ -11,14 +12,13 @@ import { StatusBar } from 'expo-status-bar';
 import { RefObject, useRef, useState } from 'react';
 import { Platform, TextInput as TextInputRN } from 'react-native';
 import { Masks } from 'react-native-mask-input';
-import { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components/native';
 import { TermsCheckBox } from './components/TermsCheckBox';
 import { Container, FormContainer } from './styles';
 
 export function SignUp() {
   const navigation = useNavigation<TAuthRoutesBottomTabs>();
-  const theme = useTheme();
-  //@ts-ignore
+  const theme = useTheme() as IStyledTheme;
   const currentTheme = theme.title;
 
   const [name, setName] = useState('');

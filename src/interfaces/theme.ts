@@ -3,6 +3,7 @@ export interface IStyledTheme {
   colors: {
     absolute_black: string;
     absolute_white: string;
+    absolute_gray: string;
     alert: string;
     background: string;
     borders: string;

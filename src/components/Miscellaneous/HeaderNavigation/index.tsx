@@ -1,7 +1,8 @@
 import { Feather } from '@expo/vector-icons';
-import { light } from '@themes/light';
+import { IStyledTheme } from '@interfaces/theme';
 import { SvgXml } from 'react-native-svg';
-import { CSSProperties, useTheme } from 'styled-components';
+import { CSSProperties } from 'styled-components';
+import { useTheme } from 'styled-components/native';
 import { logoSmallSvg } from '../../../assets/svgs';
 import {
   BackButton,
@@ -27,8 +28,7 @@ export function HeaderNavigation({
   showsLogo,
   onPressLogo,
 }: HeaderNavigationProps) {
-  const theme = useTheme();
-  //@ts-ignore
+  const theme = useTheme() as IStyledTheme;
   const currentTheme = theme.title;
   return (
     <Container style={style as never}>
@@ -36,11 +36,11 @@ export function HeaderNavigation({
         <BackButton onPress={onBack}>
           <Feather
             name="arrow-left"
-            size={24}
+            size={theme.sizes[7]}
             color={
               currentTheme === 'dark'
-                ? light.theme.colors.absolute_white
-                : light.theme.colors.absolute_black
+                ? theme.colors.absolute_white
+                : theme.colors.absolute_black
             }
           />
         </BackButton>

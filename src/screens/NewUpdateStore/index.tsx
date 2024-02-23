@@ -2,20 +2,20 @@
 import { PrimaryButton } from '@components/Buttons/PrimaryButton';
 import { Text } from '@components/Typography/Text';
 import { Title } from '@components/Typography/Title';
+import { IStyledTheme } from '@interfaces/theme';
 import { GlobalStyles } from '@styles/globals';
 import { StatusBar } from 'expo-status-bar';
 import { SvgXml } from 'react-native-svg';
-import { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components/native';
 import {
-    logoWithTextSvg,
-    logoWithTextWhiteSvg,
-    newStoreUpdateSvg,
+  logoWithTextSvg,
+  logoWithTextWhiteSvg,
+  newStoreUpdateSvg,
 } from '../../assets/svgs';
 import { Container, ContentContainer, LogoContainer } from './styles';
 
 export function NewUpdateStore() {
-  const theme = useTheme();
-  //@ts-ignore
+  const theme = useTheme() as IStyledTheme;
   const currentTheme = theme.title;
 
   return (

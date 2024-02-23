@@ -1,4 +1,5 @@
 import { Feather } from '@expo/vector-icons';
+import { IStyledTheme } from '@interfaces/theme';
 import { ActivityIndicator, TouchableOpacityProps } from 'react-native';
 import { CSSProperties } from 'styled-components';
 import { useTheme } from 'styled-components/native';
@@ -22,7 +23,7 @@ export function NextActionButton({
   ...rest
 }: ButtonProps) {
   const DISABLED_BUTTON_OPACITY = 0.8;
-  const theme = useTheme();
+  const theme = useTheme() as IStyledTheme;
   return (
     <Container
       activeOpacity={DISABLED_BUTTON_OPACITY}
@@ -37,10 +38,8 @@ export function NextActionButton({
             {title}
           </Title>
           <Feather
-            //@ts-ignore
             size={theme.sizes[6]}
             name="arrow-right"
-            //@ts-ignore
             color={theme.colors.title}
           />
         </ContentContainer>

@@ -3,6 +3,7 @@ import { PrimaryButton } from '@components/Buttons/PrimaryButton';
 import { TextInput } from '@components/Inputs/TextInput';
 import { HeaderNavigation } from '@components/Miscellaneous/HeaderNavigation';
 import { Text } from '@components/Typography/Text';
+import { IStyledTheme } from '@interfaces/theme';
 import { useNavigation } from '@react-navigation/native';
 import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 import { GlobalStyles } from '@styles/globals';
@@ -10,14 +11,13 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Platform } from 'react-native';
 import { SvgXml } from 'react-native-svg';
-import { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components/native';
 import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
 import { Container, FormContainer } from './styles';
 
 export function PasswordRecovery() {
   const navigation = useNavigation<TAuthRoutesBottomTabs>();
-  const theme = useTheme();
-  //@ts-ignore
+  const theme = useTheme() as IStyledTheme;
   const currentTheme = theme.title;
 
   const [email, setEmail] = useState('');

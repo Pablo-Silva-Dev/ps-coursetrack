@@ -5,6 +5,7 @@ import { PasswordInput } from '@components/Inputs/PasswordInput';
 import { TextInput } from '@components/Inputs/TextInput';
 import { AppVersion } from '@components/Miscellaneous/AppVersion';
 import { Text } from '@components/Typography/Text';
+import { IStyledTheme } from '@interfaces/theme';
 import { useNavigation } from '@react-navigation/native';
 import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 import { ColumnContainer, GlobalStyles } from '@styles/globals';
@@ -12,7 +13,7 @@ import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { SvgXml } from 'react-native-svg';
-import { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components/native';
 import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
 import { Container, FormContainer, ImageContainer, Styles } from './styles';
 
@@ -22,8 +23,7 @@ export function InitialScreen() {
   const [isAuthenticated] = useState(false);
   const [hasStoreUpdates] = useState(false);
   const navigation = useNavigation<TAuthRoutesBottomTabs>();
-  const theme = useTheme();
-  //@ts-ignore
+  const theme = useTheme() as IStyledTheme;
   const currentTheme = theme.title;
 
   useEffect(() => {

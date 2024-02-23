@@ -1,4 +1,5 @@
 import { Feather } from '@expo/vector-icons';
+import { IStyledTheme } from '@interfaces/theme';
 import { ForwardRefRenderFunction, forwardRef, useState } from 'react';
 import { TextInput, TextInputProps } from 'react-native';
 import { CSSProperties } from 'styled-components';
@@ -25,7 +26,7 @@ const InputBase: ForwardRefRenderFunction<TextInput, ITextInput> = (
   const [isPasswordVisibility, setIsPasswordVisibility] = useState(true);
   const [isFocused, setIsFocused] = useState(false);
   const [, setIsFilled] = useState(false);
-  const theme = useTheme();
+  const theme = useTheme() as IStyledTheme;
 
   function handlePasswordVisibilityChange() {
     setIsPasswordVisibility(prevState => !prevState);
@@ -47,7 +48,6 @@ const InputBase: ForwardRefRenderFunction<TextInput, ITextInput> = (
         <InputText
           allowFontScaling={false}
           secureTextEntry={isPasswordVisibility}
-          //@ts-ignore
           placeholderTextColor={theme.colors.absolute_gray}
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
@@ -65,7 +65,6 @@ const InputBase: ForwardRefRenderFunction<TextInput, ITextInput> = (
             <Feather
               name={isPasswordVisibility ? 'eye' : 'eye-off'}
               size={20}
-              //@ts-ignore
               color={theme.colors.placeholder}
             />
           </ChangePasswordVisibilityButton>

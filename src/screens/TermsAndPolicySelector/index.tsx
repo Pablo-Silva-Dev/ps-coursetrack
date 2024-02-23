@@ -2,19 +2,19 @@
 import { NextActionButton } from '@components/Buttons/NextActionButton';
 import { HeaderNavigation } from '@components/Miscellaneous/HeaderNavigation';
 import { Text } from '@components/Typography/Text';
+import { IStyledTheme } from '@interfaces/theme';
 import { useNavigation } from '@react-navigation/native';
 import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 import { GlobalStyles } from '@styles/globals';
 import { StatusBar } from 'expo-status-bar';
 import { SvgXml } from 'react-native-svg';
-import { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components/native';
 import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
 import { Container, FormContainer } from './styles';
 
 export function TermsAndPoliticsSelector() {
   const navigation = useNavigation<TAuthRoutesBottomTabs>();
-  const theme = useTheme();
-  //@ts-ignore
+  const theme = useTheme() as IStyledTheme;
   const currentTheme = theme.title;
 
   return (

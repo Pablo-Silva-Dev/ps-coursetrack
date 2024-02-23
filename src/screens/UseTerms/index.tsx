@@ -3,19 +3,19 @@ import { HeaderNavigation } from '@components/Miscellaneous/HeaderNavigation';
 import { Subtitle } from '@components/Typography/Subtitle';
 import { Text } from '@components/Typography/Text';
 import { useTermsText } from '@data/mocks';
+import { IStyledTheme } from '@interfaces/theme';
 import { useNavigation } from '@react-navigation/native';
 import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
 import { GlobalStyles } from '@styles/globals';
 import { StatusBar } from 'expo-status-bar';
 import { SvgXml } from 'react-native-svg';
-import { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components/native';
 import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
 import { Container, TextContainer, TitleContainer } from './styles';
 
 export function UseTerms() {
   const navigation = useNavigation<TAuthRoutesBottomTabs>();
-  const theme = useTheme();
-  //@ts-ignore
+  const theme = useTheme() as IStyledTheme;
   const currentTheme = theme.title;
 
   return (
