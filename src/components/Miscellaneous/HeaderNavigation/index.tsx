@@ -1,10 +1,8 @@
+import { Feather } from '@expo/vector-icons';
+import { light } from '@themes/light';
 import { SvgXml } from 'react-native-svg';
 import { CSSProperties, useTheme } from 'styled-components';
-import {
-  arrowLeftBlackSvg,
-  arrowLeftWhiteSvg,
-  logoSmallSvg,
-} from '../../../assets/svgs';
+import { logoSmallSvg } from '../../../assets/svgs';
 import {
   BackButton,
   Container,
@@ -36,9 +34,13 @@ export function HeaderNavigation({
     <Container style={style as never}>
       <ContentContainer>
         <BackButton onPress={onBack}>
-          <SvgXml
-            xml={
-              currentTheme === 'dark' ? arrowLeftWhiteSvg : arrowLeftBlackSvg
+          <Feather
+            name="arrow-left"
+            size={24}
+            color={
+              currentTheme === 'dark'
+                ? light.theme.colors.absolute_white
+                : light.theme.colors.absolute_black
             }
           />
         </BackButton>
