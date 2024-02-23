@@ -14,12 +14,21 @@ interface ITextInputMaskProps {
   onSubmitEditing?: () => void;
   editable?: boolean;
   autoFocus?: boolean;
+  returnKeyType:
+    | 'done'
+    | 'go'
+    | 'next'
+    | 'search'
+    | 'send'
+    | 'none'
+    | 'previous'
+    | 'default';
 }
 
 const InputBase: ForwardRefRenderFunction<
   typeof MaskInput,
   ITextInputMaskProps
-> = ({ label, editable, autoFocus, ...rest }, ref) => {
+> = ({ label, editable, autoFocus, returnKeyType, ...rest }, ref) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
@@ -34,6 +43,7 @@ const InputBase: ForwardRefRenderFunction<
         allowFontScaling={false}
         autoFocus={autoFocus}
         placeholderTextColor={light.theme.colors.absolute_gray}
+        returnKeyType={returnKeyType as never}
         {...rest}
       />
     </Container>

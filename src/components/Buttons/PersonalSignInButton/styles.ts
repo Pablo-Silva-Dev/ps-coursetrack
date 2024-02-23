@@ -1,5 +1,4 @@
 import { RFValue } from 'react-native-responsive-fontsize';
-//@ts-ignore
 import UserAvatar from 'react-native-user-avatar';
 import { DefaultTheme } from 'styled-components';
 import styled, { css } from 'styled-components/native';
@@ -25,7 +24,7 @@ export const Title = styled.Text`
   `}
 `;
 
-export const AvatarUser = styled(UserAvatar)`
+export const AvatarUser = styled(UserAvatar as never)`
   ${({ theme }: DefaultTheme) => css`
     width: ${RFValue(theme.sizes[7])}px;
     height: ${RFValue(theme.sizes[7])}px;

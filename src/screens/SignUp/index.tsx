@@ -88,7 +88,6 @@ export function SignUp() {
           onChangeText={setCpf}
           ref={cpfInputRef as never}
           onSubmitEditing={() => handleInputNavigate(passwordInputRef)}
-          //@ts-ignore
           returnKeyType={'done' as never}
         />
         <PasswordInput

@@ -18,6 +18,7 @@
       "@routes/*": ["routes/*"],
       "@styles/*": ["styles/*"],
       "@appConstants/*": ["appConstants/*"]
-    }
+    },
+    "typeRoots": ["./node_modules/@types", "./@types"]
   }
 }

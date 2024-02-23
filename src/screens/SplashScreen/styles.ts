@@ -1,9 +1,8 @@
-import { DefaultTheme, css } from 'styled-components';
-import { RFValue } from 'react-native-responsive-fontsize';
-import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { DefaultTheme } from 'styled-components';
+import styled, { css } from 'styled-components/native';
 
-//@ts-ignore
 export const Container = styled.View`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;

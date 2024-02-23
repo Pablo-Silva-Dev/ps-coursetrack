@@ -54,10 +54,7 @@ const InputBase: ForwardRefRenderFunction<TextInput, ITextInput> = (
           {...rest}
           ref={ref}
         />
-        <ChangePasswordVisibilityContainer
-          //@ts-ignore
-          isFocused={isFocused}
-        >
+        <ChangePasswordVisibilityContainer>
           <ChangePasswordVisibilityButton
             onPress={handlePasswordVisibilityChange}
             activeOpacity={0.8}
