@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ps-coursetrack",
-    "slug": "ps-coursetrack",
+    "name": "react-native-apps-template",
+    "slug": "react-native-apps-template",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
